@@ -1,0 +1,63 @@
+<html>
+    <head>
+     
+        <body>
+     <script>
+      /*
+      1, все алерты переделать на консоль логи
+      2, сделать так чтоб каждый транспорт возвращал цену в деньгах
+      3. посчитать сколько будет показаться на трамвае а потом на таксе за одну поездку, 
+      потом посчитать сколько будет на скутере и тролейбусе
+      */
+ function calulateRoad(transportType){
+
+    switch (transportType){
+        case 'taxi':
+            console.log('50zl');
+            return 50;
+            break ;
+            
+        case 'tram':
+        console.log;('ja na trame')
+        case 'trall':
+            console.log('5zl');
+            return 5;
+            break;
+        
+        case 'skuter':
+            console.log('10zl');
+            console.log('ebanutsia');
+            return 10;
+            break;
+        
+        case 'metro':
+            alert('niema');
+            break;
+
+        default:
+            alert('hz');
+
+    }
+    
+ }
+  
+let trallPrice = calulateRoad('trall')
+let skuterPrice = calulateRoad('skuter');
+let totalPrice = trallPrice + skuterPrice;
+
+
+console.log(totalPrice);
+  
+
+
+ /*let price = calulateRoad('taxi')
+ console.log('price:', price)
+
+ calulateRoad('taxi')*/
+        
+
+        
+    </script>
+           </body>
+        </head>
+</html>
