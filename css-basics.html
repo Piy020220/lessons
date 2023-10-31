@@ -1,0 +1,381 @@
+<html>
+    <style>
+        /* Selectors */
+
+        a {
+            color: rgb(0, 255, 34);
+        }
+
+        [href] {
+            color: red;
+        } 
+
+        [href="google.com"] {
+            color: green;
+        } 
+
+        .some-class {
+            color: rgb(100, 0, 134);
+        }
+
+        #some-id {
+            color: rgb(8, 6, 30);
+        }
+
+        /* все елементы с айдишником some-id которые лежат в спане */
+        span #some-id {
+            color: rgb(189, 233, 30);
+        }
+
+
+
+
+        .postioning-container {
+            position: relative;
+            border: 1px solid red;
+            padding: 20px;
+            margin: 5px;
+        }
+
+        .postioning-container div {
+            border: 1px dashed lightblue;
+            width: 200px;
+            height: 100px;
+        }
+
+        /* не делает ни-ху-я (по умолчанию) */
+        .static {
+            position: static;
+            top: 50px;
+            left: 50px;
+        }
+
+        /* Фиксирует положение на странице забивая хуй на скроллинг */
+        .fixed {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            background: rgb(11, 200, 225);
+            z-index: 10;
+        }
+
+        /* устанавливает положение относительно своего родителя (родителя у которого position не static ) */
+        .absolute {
+            position: absolute;
+            top: 50px;
+            left: 150px;
+            background: rgb(235, 67, 5);
+        }
+
+        /* устанавливает положение относительно своего текущего положения */
+        .relative {
+            position: relative;
+            top: 10px;
+            left: 10px;
+            
+        }
+
+        div.with-persentage-width#with-persentage-width-id {
+            background: rgb(26, 112, 159);
+            
+            width: 50%;
+            min-width: 200px;
+            max-width: 400px;
+        }
+
+        .display-container div { 
+            width: auto; 
+            height: auto;
+            border-color: blueviolet;
+        }
+
+        .display-container div.inline {
+            display: inline;
+            background: rgb(251, 195, 195);
+            padding: 10px;
+        }
+
+        
+        .display-container div.inline-block {
+            display: inline-block;
+            background: rgb(251, 195, 195);
+            padding: 10px;
+        }
+
+        .display-container div.block {
+            display: block;
+            background: rgb(251, 195, 195);
+            padding: 10px;
+        }
+        
+        
+        .nice-text {
+            background-color: aqua;
+        }
+
+        .z-index-contanier {
+            height: 200px;
+        }
+        .z-index-contanier .first,
+        .z-index-contanier .second,
+        .z-index-contanier .third{
+            position:absolute;
+            top: 0;
+        }
+        .z-index-contanier .first{
+            z-index: 100;
+            background-color: aqua;
+            left:50px;
+            margin-top: 50px;
+
+        }
+        .z-index-contanier .second{
+            z-index: 102;
+            background-color: blueviolet;
+            left: 100px;
+            margin-top: 100px;
+        }
+    
+        .z-index-contanier .third{
+            z-index: 3;
+            background-color: black;
+            left: 150px;
+            margin-top: 150px;
+        }
+        .scroll-contanier div{
+            height: 50px;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: middle;
+
+        }
+        /* покажет весь контент в независимости от высоты контейнера*/
+        .scroll-contanier div.visible {
+            overflow-y: visible;
+            height: 100px;
+        } 
+
+        /*контенкт который будет за границами размеров контейнера ,будет спрятан*/
+        .scroll-contanier .hidden {
+            overflow-y: hidden;
+        } 
+        /*скролл всегда*/
+        .scroll-contanier .scroll {
+            overflow-y: scroll;
+        } 
+        /*подстраивается под ситуацию,если много контента ,то скролл,если мало,скролл пропадает,показывает контент в пределах контейнера*/
+        .scroll-contanier .auto {
+            overflow-y: auto;
+        } 
+        
+        
+       .flex-containers{
+        border: 1px solid red;
+       }        
+       
+       
+       .flex-row{
+        display: flex;
+        align-items: stretch;
+        height: 100px;
+       }
+       
+       .a{
+        min-height: 30px;
+        width: 50px;
+        background-color: rebeccapurple;
+       }
+       .b{
+        min-height: 60px;
+        width: 80px;
+        background-color: gold;
+       }
+       .c{
+        min-height: 90px;
+        width: 110px;
+        background-color: blue;
+       }
+       .flex-oleg{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: stretch;
+        height: 120px;
+       }
+       .e{
+        min-height: 90px;
+        width: 110px;
+        background-color: blue;
+       }
+       .r{
+        min-height: 80px;
+        width: 100px;
+        background-color: palegreen;
+       }
+       .t{
+        min-height: 60px;
+        width: 130px;
+        background-color: rgb(11, 200, 225)
+       }
+       .flex-wro{
+        display: flex;
+        flex-flow: column wrap;
+        align-items: stretch;
+        height: 150;
+       }
+       .s{
+        min-height: 70px;
+        width: 140px;
+        background-color: rgb(11, 200, 225)
+       }
+       .d{
+        min-height: 80px;
+        width: 120px;
+        background-color: darkcyan;
+       }
+       .v{
+        min-height: 90px;
+        width: 100px;
+        background-color: rgb(251, 195, 195);
+       }
+       
+
+    </style>
+    <body>
+
+        <h1>
+            Styles
+        </h1>
+        <section>
+            <h2>Selectors</h2>
+            <a>a without anything</a>
+            <a href >with attribute</a>
+            
+            <a href="google.com" >with google attribute value</a>
+
+            <a href="facebook.com" >with attribute value</a>
+
+            <a class="some-class"> with class</a>
+
+            <a id="some-id"> with id</a>
+
+            <span>
+                <a id="some-id"> with id inside of span</a>
+            </div>
+        </section>
+        <section>
+            <h2>
+                Postioning
+            </h2>
+            <div class="postioning-container">
+                <div class="relative">relative</div>
+                <div class="absolute">absolute</div>
+                <div class="fixed">fixed</div>
+                <div class="static">static</div>
+            </div>
+            <div class="postioning-container">
+                <div>1</div>
+                <div class="relative">2 relative</div>
+                <div>3</div>
+                <div class="with-persentage-width" id="with-persentage-width-id">В первом «однострочном» макете разберемся с самой страшной тайной CSS — центрированием. </div>
+
+            </div>
+        </section>
+        <section>
+            <h2>
+                Display
+            </h2>
+            <div class="postioning-container display-container">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                
+                <div class="inline">inline block</div>
+                
+                Lorem 
+                
+                <span class="nice-text">Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and</span> 
+                
+                scrambled it to make a type specimen book. 
+                It has survived not only five centuries, but also the leap into electronic typesetting, 
+                remaining essentially unchanged. It was popularised in the 
+                
+                <div class="inline-block">1960s with the release of Letraset </div>
+                
+                sheets containing Lorem Ipsum passages, 
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                sheets containing Lorem Ipsum passages, 
+                
+                <div class="block">block and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                
+                sheets containing Lorem Ipsum passages, 
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                
+                
+                <div class="flex"></div>
+                <div class="grid"></div>
+            </div>
+        
+        </section>
+        <section>
+            <h2>
+                Scroll
+            </h2>
+            <div class="postioning-container scroll-contanier" >
+                <div class="visible"> 
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </div>
+                <div class="hidden">
+                    sheets containing Lorem Ipsum passages, 
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    
+                </div>
+                <div class="scroll">
+                    sheets containing Lorem Ipsum passages, 
+                    
+                    
+                </div>
+                <div class="auto">
+                    sheets containing Lorem Ipsum passages, 
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>
+                z-index
+
+            </h2>
+            <div class="postioning-container z-index-contanier" >
+             <div class="first"></div>
+             <div class="second"></div>
+             <div class="third"></div>
+                
+            </div>
+            
+            <div class="flex-containers">
+                <div class="flex-row">
+                <div class="a">1</div>
+                <div class="b">2</div>
+                <div class="c">3</div>
+            </div>
+                   </div>
+            <div class="flex-containers">            
+                <div class="flex-oleg">
+                <div class="e">4</div>
+                <div class="r">5</div>
+                <div class="t">6</div>
+                 </div>
+                   </div>
+                   <div class="flex-containers">            
+                   <div class="flex-wro">       
+                    <div class="s">7</div>
+                    <div class="d">8</div>
+                    <div class="v">9</div>
+                   </div>
+                   </div>
+                                      
+
+        </section>
+    </body>
+</html>
