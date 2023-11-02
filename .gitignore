@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+/lesson-app/node_modules
+/lesson-app/.pnp
+/lesson-app/.pnp.js
+
+# testing
+/lesson-app/coverage
+
+# production
+/lesson-app/build
+
+# misc
+/lesson-app/.DS_Store
+/lesson-app/.env.local
+/lesson-app/.env.development.local
+/lesson-app/.env.test.local
+/lesson-app/.env.production.local
+
+/lesson-app/npm-debug.log*
+/lesson-app/yarn-debug.log*
+/lesson-app/yarn-error.log*
+.DS_Store
