@@ -1,17 +1,127 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { ProductItem,RenderArrays } from './components';
+import { ProductList, CoolProductList } from './components/ProductList';
+import {ProductCategory} from './components/ProductCategory ';
+import { Example } from './components/Examples';
 
 
+/**
+ * написать функционал для этого -
+ <ProductCategory 
+        category={productCategory}
+        import {ProductCategory} from './components/ProductCategory'
+        export {ProductCategory} from './ProductCategory'
+      />
 
-
-
+       />
+      
+ */
 function App() {
-  return (
+  const massivMassivov = [[1,1],[2,2],[3,3,3,4],[4,4,2,3]]
+  const product = {type:"Fiat", model:"500", color:"white"}
+
+  
+
+  const products = [
+    {type:"Fiat", model:"500", color:"white"},
+    {type:"toyota", model:"auris", color:"black"},
+    {type:"Petro", model:"e34", color:"superblack"},
+  ];
+
+  const productCategory = {
+    name: 'Cars',
+    type: 'For Man',
+    products: [
+      {type:"Fiat", model:"500", color:"white"},
+      {type:"toyota", model:"auris", color:"black"},
+      {type:"BMW", model:"e34", color:"superblack"},
+    ]
+  }
+  
+  const productCategories = [[
+    {type:"Alena", model:"shmara", color:"white"},
+    {type:"Alesia", model:"domohoziajka", color:"black"},
+    {type:"Nastia", model:"Dyrka", color:"superblack"},
+  ],
+  [
+    {type:"Fiat", model:"500", color:"white"},
+    {type:"toyota", model:"auris", color:"black"},
+    {type:"Petro", model:"e34", color:"superblack"},
+  ],
+  [
+    {type:"Fiat", model:"500", color:"white"},
+    {type:"toyota", model:"auris", color:"black"},
+    {type:"Petro", model:"e34", color:"superblack"},
+  ]]
+return (
     
-    <div className="App">
+     <React.Fragment>
+      <h2>
+    number arrays
+</h2>
+ 
+        <Example 
+      />
+     
+     
+     
+      <RenderArrays 
+          myArray={['ford','lada','bmw','toyota']}
+        />
+      
+      
+        
+
+      <ProductCategory 
+         category={productCategory}
+         />
+
+
+ 
+
+       <RenderArrays 
+          myArray={['mraz','lada','nastia','alena']}
+      />
+      
+      {massivMassivov.map((item) => (
+          <RenderArrays
+          myArray={item}
+          />
+
+         ))}
+
+      <ProductItem
+         product={product}
+      />
+   
+      <br/>
+
+      
+      cool product list = <CoolProductList products={products} />
+      <br/>
+      <ProductList products={products} />
+      
+       <br />
+      ------+---
+      {products.map((item) => (
+        
+        <ProductItem
+          product={item}
+      />
+     
+      
+  ))}
+      ------+---
+      
+
+
        <div className='demo-container'>
               <div>tekst massivov {aaa}</div><button onClick={onAddClick}>calculate</button>
                 </div> 
+    
+    <div className="App">
            
       <header className="App-header">
         
@@ -30,14 +140,14 @@ function App() {
       </header>
       
       </div>
-      
+      </React.Fragment>
     
   );
 }
 
 export default App;
 
-
+const aaa = [[1,1],[2,2],[3,3,3,4],[4,4,2,3]]
             let arr = ['ple','joeg','anton','vafledron']
             console.log(arr[1])
             
@@ -61,7 +171,7 @@ export default App;
            
             console.log('=============================')
 
-            let aaa = [[1,1],[2,2],[3,3,3,4],[4,4,2,3]]
+            
             
             
             const calculateKassa = (myKassa) => {
@@ -80,10 +190,9 @@ export default App;
 
                 kassaD = calculateKassa(aaa[i]) + kassaD;
                 console.log(kassaD);
-              alert(kassaD)  
-              }          
-
-              }
-
-            
-           
+               
+              
+            }
+            alert(kassaD);
+                      
+                      }
