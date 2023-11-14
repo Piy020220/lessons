@@ -2,7 +2,7 @@ import { ProductItem } from "../ProductItem"
 
 export const ProductList = ({products}) =>{
 
-    console.log('vladdik pi`dy choczet',products)
+    
  
     const mappingFun = (item) => {
         return (
@@ -22,7 +22,7 @@ export const ProductList = ({products}) =>{
 
 export const CoolProductList = ({products}) =>{
 
-    console.log('vladdik pi`dy choczet',products)
+    
 
     return (
         <div className="RenderProducts">          

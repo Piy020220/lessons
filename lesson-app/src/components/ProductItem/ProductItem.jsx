@@ -4,10 +4,6 @@ export const ProductItem = ({product}) => {
         throw 'Vasya, ty sho eblan? sho za product ty mne peredal'
     }
     
-    console.log('product:', product)
-    console.log('product.type:', product.type)
-    console.log('product.model:', product.model)
-    console.log('product.color:', product.color)
     return (
         <li className='product-item'>
             

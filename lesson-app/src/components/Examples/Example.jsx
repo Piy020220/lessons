@@ -10,7 +10,7 @@ export const Example = ({oleg}) => {
             lastname : 'niczipirenko'
         },
         {
-            name : 'petya',
+            name : 'petya', 
             lastname : 'szkurateniuk'
         },
         {
@@ -19,15 +19,14 @@ export const Example = ({oleg}) => {
         }
         
     ]
-  console.log('---------------',oleg)  
+ // ==  ===============================================================
+ 
+//=================================================
 return (
     <div className="Example">
         {MassName.map ((item)=> <span key={item}>{item},</span>)}
-        {MassNumbers.map ((item) => <span key={item}>-{item * 2}</span>)}
-        
-        <ProductList>
-            {MassObjects}
-        </ProductList>
+        {MassNumbers.map ((item) => <span key={item}>-{item * 2},</span>)}
+        {MassObjects.map((item)=> <span>{item.name}-{item.lastname};</span>)}
         
         
         
