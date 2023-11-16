@@ -7,17 +7,6 @@ import {ProductCategory} from './components/ProductCategory ';
 import { Example } from './components/Examples';
 
 
-/**
- * написать функционал для этого -
- <ProductCategory 
-        category={productCategory}
-        import {ProductCategory} from './components/ProductCategory'
-        export {ProductCategory} from './ProductCategory'
-      />
-
-       />
-      
- */
 function App() {
   const massivMassivov = [[1,1],[2,2],[3,3,3,4],[4,4,2,3]]
   const product = {type:"Fiat", model:"500", color:"white"}
@@ -29,32 +18,10 @@ function App() {
     {type:"toyota", model:"auris", color:"black"},
     {type:"Petro", model:"e34", color:"superblack"},
   ];
+  ..
 
-  const productCategory = {
-    name: 'Cars',
-    type: 'For Man',
-    products: [
-      {type:"Fiat", model:"500", color:"white"},
-      {type:"toyota", model:"auris", color:"black"},
-      {type:"BMW", model:"e34", color:"superblack"},
-    ]
-  }
+ 
   
-  const productCategories = [[
-    {type:"Alena", model:"shmara", color:"white"},
-    {type:"Alesia", model:"domohoziajka", color:"black"},
-    {type:"Nastia", model:"Dyrka", color:"superblack"},
-  ],
-  [
-    {type:"Fiat", model:"500", color:"white"},
-    {type:"toyota", model:"auris", color:"black"},
-    {type:"Petro", model:"e34", color:"superblack"},
-  ],
-  [
-    {type:"Fiat", model:"500", color:"white"},
-    {type:"toyota", model:"auris", color:"black"},
-    {type:"Petro", model:"e34", color:"superblack"},
-  ]]
 return (
     
      <React.Fragment>
@@ -71,13 +38,7 @@ return (
           myArray={['ford','lada','bmw','toyota']}
         />
       
-      
-        
-
-      <ProductCategory 
-         category={productCategory}
-         />
-
+  
 
  
 
