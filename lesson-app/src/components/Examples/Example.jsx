@@ -1,7 +1,7 @@
 import { ProductItem } from "../ProductItem";
 import { ProductList } from "../ProductList";
 import {ProductCategory} from '../ProductCategory ';
-export const Example = ({oleg}) => {
+export const Example = ({}) => {
     const MassName = ['petya','vlad','anton'];
     const MassNumbers = [10,28,35];
     const MassObjects = [
@@ -54,7 +54,7 @@ export const Example = ({oleg}) => {
         },
         {
             name: "Cars",
-            type: "For Man",
+            type: "For Pasany",
             products: [
                 {
                 type: "Fiat",
@@ -75,7 +75,7 @@ export const Example = ({oleg}) => {
         },
         {
             name: "Shluhy",
-            type: "For Man",
+            type: "For Mans",
             products: [
                 {
                 type: "Alena",
@@ -95,14 +95,24 @@ export const Example = ({oleg}) => {
             ]
         }
     ]
+    //====================
+const hueta = (item) => { 
+    console.log(item)
+return (
+<span>{item.name}-{item.type}<ProductCategory category={item} /></span>)
+}
+
+//====================
 
 return (
     <div className="Example">
-        {MassName.map ((item)=> <span key={item}>{item},</span>)}
+        {MassName.map ((item) => <span key={item}>{item},</span>)}
         {MassNumbers.map ((item) => <span key={item}>-{item * 2},</span>)}
-        {MassObjects.map((item)=> <span>{item.name}-{item.lastname};</span>)}
+        {MassObjects.map((item) => <span>{item.name}-{item.lastname};SLED MASSIVVVV</span>)}
+        {productCategories.map(hueta)}
         
-        <ProductCategory category={productCategory} />
+        
+         <ProductCategory category={productCategory} />
 
     </div>
 )
@@ -110,4 +120,4 @@ return (
 /**
 сделать так чтобы диначиеский рендерился массив  productCategories,смотреть пример в ProductList а то петя развалит сани
  
- */ ю
+ */ 
