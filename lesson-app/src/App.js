@@ -18,7 +18,7 @@ function App() {
     {type:"toyota", model:"auris", color:"black"},
     {type:"Petro", model:"e34", color:"superblack"},
   ];
-  ..
+  
 
  
   
