@@ -10,4 +10,3 @@ export const ProductCategory = ({category}) => {
         </div>
     )
 }
-,

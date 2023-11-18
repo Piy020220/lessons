@@ -14,8 +14,6 @@ export const RenderArrays = ({myArray}) => {
     )
 }
 
-,
-
   /*
     oleg.map((item,index)=>{
     

@@ -13,4 +13,4 @@ export const ProductItem = ({product}) => {
         </li>
 
     )
-} ,
+}

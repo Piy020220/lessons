@@ -1,7 +1,11 @@
 import { ProductItem } from "../ProductItem";
 import { ProductList } from "../ProductList";
 import {ProductCategory} from '../ProductCategory ';
+import {products, cars} from "./dataFile";
+
+
 export const Example = ({}) => {
+    
     const MassName = ['petya','vlad','anton'];
     const MassNumbers = [10,28,35];
     const MassObjects = [
@@ -120,4 +124,4 @@ return (
 /**
 сделать так чтобы диначиеский рендерился массив  productCategories,смотреть пример в ProductList а то петя развалит сани
  
- */ ..
+ */

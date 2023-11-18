@@ -34,4 +34,3 @@ export const CoolProductList = ({products}) =>{
         </div>  
     )
 } 
-,

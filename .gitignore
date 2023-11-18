@@ -22,3 +22,4 @@
 /lesson-app/yarn-debug.log*
 /lesson-app/yarn-error.log*
 .DS_Store
+.idea
