@@ -16,7 +16,7 @@ export const ProductList = ({products}) =>{
     return (
         <div className="RenderProducts">          
           {products.map(mappingFun)}   
-        </div>
+        </div>  
     )
 }
 
@@ -31,6 +31,7 @@ export const CoolProductList = ({products}) =>{
                     product={item}
                 />
         ))}   
-        </div>
+        </div>  
     )
-}
+} 
+,
