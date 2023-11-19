@@ -1,4 +1,4 @@
-export const cars = [
+export const cars1 = [
     {
         "value": "INTEGRA Coupe (1985.01 - 1990.12)",
         "price": 363
@@ -85,7 +85,9 @@ export const cars = [
     }
 ]
 
-export const products = [
+
+
+export const products2 = [
     {
         "id": 1,
         "title": "iPhone 9",
