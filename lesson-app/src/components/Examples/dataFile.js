@@ -85,6 +85,14 @@ export const cars = [
     }
 ]
 
+
+export const carProducts = 
+    {
+        id:29,
+        price:128
+    }
+
+
 export const products = [
     {
         "id": 1,

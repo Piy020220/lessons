@@ -27,12 +27,20 @@
 
 
 
+   
+
+function validateProduct (product){
+    if(!product.title || product.description){
+        throw 'вася ты че передал '
+    }
+}   
 
 
 
-export const StoreProductItem = ({product}) =>{
- 
-    return (<li>
+export const StoreProductItem = ({product}) => {
+    let valet = validateProduct({product})
+     
+     return (<li>
         {product.title},
         {product.description}
     </li>)

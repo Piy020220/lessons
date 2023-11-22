@@ -1,10 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { products } from './components/Examples/dataFile';
+import { cars, products ,carProducts } from './components/Examples/dataFile';
 import { LearningExamples } from './components/learningExamples';
 import { StoreProductItem } from './Store/StoreProductItem/StoreProductItem';
 import { StoreProductList } from './Store/StoreProductList/StoreProductList';
+
+
+function myFun (number) {
+  return(
+    alert (number * number)
+  )
+}
+let result = myFun(2)
 
 function App() {
 
@@ -15,8 +23,8 @@ function App() {
   } 
   if(whatToShow==='Store'){
     return (<div> 
-      
-      <StoreProductList products={products}/> 
+       <StoreProductItem product={carProducts}/>
+       <StoreProductList products={products}/> 
       
     
      </div>) 
