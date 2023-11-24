@@ -1,48 +1,37 @@
-/*
- {
-        "id": 1,
-        "title": "iPhone 9",
-        "description": "An apple mobile which is nothing like apple",
-        "price": 549,
-        "discountPercentage": 12.96,
-        "rating": 4.69,
-        "stock": 94,
-        "brand": "Apple",
-        "category": "smartphones",
-        "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
-        "images": [
-            "https://i.dummyjson.com/data/products/1/1.jpg",
-            "https://i.dummyjson.com/data/products/1/2.jpg",
-            "https://i.dummyjson.com/data/products/1/3.jpg",
-            "https://i.dummyjson.com/data/products/1/4.jpg",
-            "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
-        ]
-    },
+import './StoreProductItem.scss'
    
-добавить новый компонет который будет называться StoreProductList который будет принимать параметр products
- в кторый ты передаешь масив продуктов (тот что я тебе создал в новом файле) и рендерить компоненты StoreProductItem
+function checkType(param) {
+    if(typeof param === 'string') {
+        console.log('peredal stroku')
+    }
 
-   console.log('========',product.title, product.description)
-    */
+    if(typeof param === 'number') {
+        console.log('peredal chislo')
+    }
 
-
-
-   
+    if(typeof param === 'object') {
+        console.log('peredal object')
+    }
+    
+}
 
 function validateProduct (product){
-    if(!product.title || product.description){
-        throw 'вася ты че передал '
+    if(!product.title || !product.description) {
+        console.error('вася ты че передал ', product, 'не по понятиям') 
     }
 }   
+const myObject =  {title : 1}
 
 
 
 export const StoreProductItem = ({product}) => {
-    let valet = validateProduct({product})
+    let valet = validateProduct(product)
      
-     return (<li>
-        {product.title},
-        {product.description}
+     return (<li className='store-product-item'>
+
+        <span className ='product-title vladik '> {product.title}</span>
+        <p className ='product-description'>     {product.description}</p>
+        <img className='product-thumbnail' src= {product.thumbnail} alt="альтернативный текст" />
     </li>)
 }
 

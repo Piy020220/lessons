@@ -8,9 +8,7 @@ import { StoreProductList } from './Store/StoreProductList/StoreProductList';
 
 
 function myFun (number) {
-  return(
-    alert (number * number)
-  )
+  return 
 }
 let result = myFun(2)
 
@@ -23,14 +21,18 @@ function App() {
   } 
   if(whatToShow==='Store'){
     return (<div> 
-       <StoreProductItem product={carProducts}/>
-       <StoreProductList products={products}/> 
+      <span className='product-title vladik'>ushdsdmk</span>
+      <span className='vladik'>shdgjnfd</span>
       
-    
-     </div>) 
+      
+       <StoreProductList products={products}/> 
+       
+ </div>) 
   }
-  
 }
+  
+
+
 
 /*
    добавить новый компонет который будет называться StoreProductList который будет принимать параметр products
@@ -40,4 +42,4 @@ function App() {
 
 
 
-export default App; 
+export default App;

@@ -1,11 +1,12 @@
 import { StoreProductItem } from "../StoreProductItem/StoreProductItem"
+import './StoreProductList.scss'
 
 
 export const StoreProductList = ({products}) => {
     console.log('StoreProductList Products :', products)
     
     return(
-        <ul>
+        <ul className="store-product-list">
             {products.map((product) => <StoreProductItem product={product} key={product.id}/>)}
        </ul>
     )
