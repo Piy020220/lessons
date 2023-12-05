@@ -86,7 +86,7 @@ export const cars = [
 ]
 
 
-export const carProducts = 
+export const carProduct = 
     {
         id:29,
         price:128
@@ -104,6 +104,7 @@ export const products = [
         "stock": 94,
         "brand": "Apple",
         "category": "smartphones",
+        "countries": ['ua', 'pl'],
         "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/1/1.jpg",
@@ -123,6 +124,7 @@ export const products = [
         "stock": 34,
         "brand": "Apple",
         "category": "smartphones",
+        "countries": ['ua'],
         "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
         "images": [
             "https://i.dummyjson.com/data/products/2/1.jpg",
@@ -647,3 +649,5 @@ export const products = [
         ]
     }
 ]
+
+

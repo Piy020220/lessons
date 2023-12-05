@@ -3,20 +3,25 @@
     padding: 20px;
     width: 400px;
     margin: 5px;
+    
 }
 
 .product-title {
-background-color: red;
+text-align: center;
+border-bottom: 5px solid red;
 }
+
 
 .product-description {
-
+text-align: right;
 }
 
-.vladik {
-    border: 4px solid rgb(190, 22, 187);
-}
 
 .product-thumbnail {
     width: 100px;
+}
+
+.added-to-cart  {
+    background-color: aquamarine;
+
 }

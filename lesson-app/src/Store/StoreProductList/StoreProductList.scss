@@ -1,6 +1,8 @@
 .store-product-list {
     display: flex;
     list-style: none;
+    padding: 0;
+    justify-content:center;
 
 
     flex-wrap: wrap;
