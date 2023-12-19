@@ -14,6 +14,23 @@ const getLiClass = (isProductAdded) => {
         return 'store-product-item'
     }
 } 
+
+const getImgClass = (Size) => {
+    switch(Size){
+        case 'S':
+        return 'size-s';
+
+        case 'M':
+        return ' size-m'
+
+        case 'L':    
+        return 'size-l'
+
+        default:
+        return 'size-s';;
+        
+    }
+    }
  
 function checkType(param) {
     if(typeof param === 'string') {
@@ -41,10 +58,10 @@ export const StoreProductItem = ({product, userCountry}) => {
 
     
     const [isAdded, setIsAdded] = useState(false);
-    console.log('isAdded',isAdded);
+    const [size,setSize] = useState('S')
     
-    
-
+ 
+   
 
 
     
@@ -58,13 +75,12 @@ export const StoreProductItem = ({product, userCountry}) => {
      
      
      
-     const onclickFun = () => {
-        //alert(product.id); 
+     const onclickAdd = () => {
         setIsAdded(true)
         console.log('12')
     }
     
-    const onclickFun2 = () => {
+    const onclickRemove = () => {
         setIsAdded(false)
         console.log('13')
     }
@@ -72,34 +88,24 @@ export const StoreProductItem = ({product, userCountry}) => {
 
 
 
-// - 1. после етого возле кнопки "добавить в корзину" допиши кнопку "удалить с корзиньі" и сделать чтоб она убирала
-    // из корзиньі
-
-//2. после кнопок "добавить в корзину" и "удалить с корзиньі"
-//добавить секцию "Size"  в которой лежат кнопки S, M, L
-
-//3. добавить еще один useState для размера (size)
-
-//4. по нажатию на кнопки изменять размер
-
-//5. добавить css классьі - size-s, size-m, size-l. 
-//При добавлении любого из етих класов к тегу img у него должна меняться шириша.
-// например 100px, 150px, 200px (потестируй сам и вьібери разніье размерьі)
-
-//6. создать чистую функцию 
-//которая будет принимать параметр size и возвращать тебе css клас для тега img в зависимости от єтого размера
-
-//7. сделать так чтоб ета функция вьізьівалась для <img className={вот-тут-вот}    
-  
+// 
+  //2 path /component
   
     return (<li className= {getLiClass(isAdded)}>
-         
-        <div><button onClick={onclickFun}>add</button></div> 
-        <div><button onClick={onclickFun2}>delete</button></div>        
+         <select onChange={event => setSize(event.target.value)}>
+
+            <option value="" disabled selected>size...</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            </select>
+        
+        <div><button onClick={onclickAdd}>add</button></div> 
+        <div><button onClick={onclickRemove}>delete</button></div>        
         <div className ='product-id'> {product.id}</div>
         <div className ='product-title'> {product.title}</div>
         <p className ='product-description'>{product.description}</p>
-        <img className='product-thumbnail' src= {product.thumbnail} alt="альтернативный текст" />
+        <img className={getImgClass(size)}  src= {product.thumbnail} alt="альтернативный текст" />
     </li>)
 }
 
