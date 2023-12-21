@@ -1,61 +1,50 @@
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react';
 import { cars, products ,carProducts } from './components/Examples/dataFile';
 import { LearningExamples } from './components/learningExamples';
 import { StoreProductItem } from './Store/StoreProductItem/StoreProductItem';
 import { StoreProductList } from './Store/StoreProductList/StoreProductList';
 import ReactDOM from "react-dom/client";
+import {About} from './pages/About'
 
-function myFun (number) {
-  return 
-}
-let result = myFun(2)
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <StoreProductList products={products}  />
+  },
+  {
+    path: "/about",
+    element: <About  />
+  }
+]);
 
 function App() {
-
-  const [user, setUser] = useState({ 
-    name:'Vlad', 
-    surname: 'Legun',
-    country:'pl'
-  })
-
-  let whatToShow = 'Store';
-
+ let whatToShow = 'Store';
   if(whatToShow==='Lerning'){
-      return (<div> <LearningExamples/> </div>)
+    return (<div> <LearningExamples/> </div>)
   } 
-  
+
   if(whatToShow==='Store'){
-   
-   
-   return (<div> 
-      <span className='product-title vladik'>{user.name}</span>, 
-      <span className='vladik'>{user.surname}</span>
-      
-      
-      <select defaultValue={user.country} name="Country" id="country" onChange={event => setUser({...user,country: event.target.value})}>
-        <option value="belka">belka</option>
-        <option value="ua">Ua</option>
-        <option value="pl">Pl</option>
-      </select>
-      <div>Selected country: {user.country}</div>
-      
-       <StoreProductList products={products} userCountry={user.country} /> 
-       
- </div>) 
-  }
+    return <RouterProvider router={router} />;
+   }
 }
-  
+  export default App;
 
+  //подключить реакт роутер в приложение
+//тот пакет которьій мьі устанавливали
+//там мнструкция есть постарайся разобраться сам
 
+//2. написать функцию которая принимаєт масив продуктов и считает сумарную стоимость
+//чето типо такого:
+//const calculateTotalPrice = (products) => {
+//...
+//}
 
-/*
-   добавить новый компонет который будет называться StoreProductList который будет принимать параметр products
- в кторый ты передаешь масив продуктов (тот что я тебе создал в новом файле) и рендерить компоненты StoreProductItem
- */
+//и потестить на разньіх входньіх данньіх
 
-
-
-
-export default App;
+//let pruce1 = calculateTotalPeice([products[0], products[1]);
+//let price2  = calculateTotalPeice([products[2], products[1], products[3]);
