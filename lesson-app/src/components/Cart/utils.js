@@ -1,3 +1,5 @@
+import { products } from "../Examples/dataFile"
+
 const idArray = ['32','45','55']
 
 const AddId = (idArray,id) => {
@@ -110,3 +112,42 @@ export const switchFun = (state,action) => {
 
     
 }
+const getSomeProps = (product) => { 
+    let tittle = product.title
+    let price = product.price
+    let description = product.description
+    let result = tittle + ' ('+ price +') - ' + description;
+    
+    return result;
+}
+
+export const myFun = (products) => products.map(getSomeProps);
+    
+
+
+const vladikName = 'vladik';
+const PetersName = 'PeterE34'
+const names = ['anton','vafledron']
+const rovnujePasany = [vladikName,PetersName]
+
+
+export const calcFun = (products) =>  products.map(getSomePrices);
+
+const getSomePrices = (product) => {
+    let delivery = 10;
+    let discount = 0.8;
+    
+    if(product.price > 600){
+        return product.price * discount + delivery ;
+    }
+    else{
+        return product.price + delivery ;
+    }
+}
+
+
+
+
+
+//2. создать функцию которая принимает масив продуктов и возвращает общую цену с доставной, (+10 за каждьій товар)
+//3. дописать ету функцию с учетом новогодних скидок, каждьій продукт цена которого вьіше 600 получает скидку 20%

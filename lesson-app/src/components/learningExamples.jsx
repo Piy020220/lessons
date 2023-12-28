@@ -75,4 +75,13 @@ return (
   );
 }
 
+ 
+/* пример самой обычно функции */
 
+function myFun (number) {
+  return number * number
+  return(
+     alert(number * number)
+  )
+}
+let result = myFun(2) 
