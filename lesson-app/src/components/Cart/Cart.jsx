@@ -5,10 +5,10 @@ import { products } from '../Examples/dataFile';
 import {calcFun} from './utils'
 const testProducts = [products[0],products[1],products[2],products[3]]
 const oleg = myFun(products )
-    console.log('pleg',oleg)
+    
 
 const anton = calcFun(products)
-console.log('anton',anton)
+
 export const Cart = ({products}) => {
     
 

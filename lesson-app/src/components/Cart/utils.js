@@ -58,7 +58,6 @@ const productsWithSize = returnSize(products[0],size)
 
 
 returnSize(products[0],size)
-console.log('returnObjectreturnObject',returnSize)
 
 const returnCountries = (product,countries) => {
     const productAddCountry = {
@@ -131,7 +130,7 @@ const names = ['anton','vafledron']
 const rovnujePasany = [vladikName,PetersName]
 
 
-export const calcFun = (products) =>  products.map(getSomePrices);
+export const calcFun = (products) => products.map(getSomePrices);
 
 const getSomePrices = (product) => {
     let delivery = 10;

@@ -2,7 +2,6 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import logo from './logo.svg';
 import './App.css';
 import { cars, products ,carProducts } from './components/Examples/dataFile';
 import { LearningExamples } from './components/learningExamples';
@@ -14,7 +13,7 @@ import {About} from './pages/About'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <StoreProductList products={products}  />
+    element: <StoreProductList products={products} />
   },
   {
     path: "/about",
