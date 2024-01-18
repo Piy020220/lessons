@@ -1,5 +1,5 @@
 import { products } from '../Examples/dataFile';
-import {switchFun, switchTestDlyaVlada} from './Cart'
+import {switchFun, switchTestDlyaVlada, cartReducer} from './utils'
 
 
 describe('switchTestDlyaVlada', () => {
@@ -45,3 +45,86 @@ describe('swithFun', () => {
         expect(result.id).toBe(1)
     })
 })  
+
+describe('cartReducer', () => {
+
+    const testCart = {
+        userName: '',
+        userAddress: '',
+        products: []
+    }
+    
+    it('should add user name', () => {
+        
+        const action = {
+            type: 'CHANGE_NAME',
+            payload: {
+                name: 'Vladik yopta'
+            }
+        }
+        const newCart = cartReducer(testCart, action)
+        
+        expect(newCart).toBe({
+            userName: 'Vladik yopta',
+            userAddress: '',
+            products: []
+        })
+    })
+
+    it('should add user address', () => {
+        
+        const action = {
+            type: 'CHANGE_ADDRESS',
+            payload: {
+                address: 'Damrota 1'
+            }
+        }
+        const newCart = cartReducer(testCart, action)
+        
+        expect(newCart).toBe({
+            userName: '',
+            userAddress: 'Damrota 1',
+            products: []
+        })
+    })
+
+    it('should add product', () => {
+        
+        const action = {
+            type: 'ADD_PRODUCT',
+            payload: {
+                product: {id: 12, name: 'IPODS PRO MAX'}
+            }
+        }
+        const newCart = cartReducer(testCart, action)
+        
+        expect(newCart).toBe({
+            userName: '',
+            userAddress: '',
+            products: [{id: 12, name: 'IPODS PRO MAX'}]
+        })
+    })
+
+    it('should remove product', () => {
+        
+        const startCart = {
+            userName: 'Petro',
+            userAddress: '',
+            products: [{id: 12, name: 'IPODS PRO MAX'}, {id: 1, name: 'Samsung'}]
+        }
+
+        const action = {
+            type: 'REMOVE_PRODUCT',
+            payload: {
+                productId: 12
+            }
+        }
+        const newCart = cartReducer(startCart, action)
+        
+        expect(newCart).toBe({
+            userName: 'Petro',
+            userAddress: '',
+            products: [{id: 1, name: 'Samsung'}]
+        })
+    })
+})

@@ -20,7 +20,8 @@ export const LearningExamples = () => {
   
 
  
-  
+const mappingFn = (item) => (<RenderArrays myArray={item} />)
+
 return (
     
      <React.Fragment>
@@ -32,7 +33,8 @@ return (
       <RenderArrays myArray={['ford','lada','bmw','toyota']} />
       <RenderArrays myArray={['mraz','lada','nastia','alena']} />
       
-      {massivMassivov.map((item) => (<RenderArrays myArray={item} />))}
+      
+      {massivMassivov.map(mappingFn)}
 
       <br/>
       cool product list = <CoolProductList products={products} />

@@ -61,10 +61,6 @@ export const StoreProductItem = ({product, userCountry}) => {
     const [size,setSize] = useState('S')
     
  
-   
-
-
-    
     if(product.countries) {
         const isProductNotAvailableInCurrentCountry = product.countries.includes(userCountry)
         

@@ -21,9 +21,6 @@ export const ProductList = ({products}) =>{
 }
 
 export const CoolProductList = ({products}) =>{
-
-    
-
     return (
         <div className="RenderProducts">          
             {products.map( (item) => (
