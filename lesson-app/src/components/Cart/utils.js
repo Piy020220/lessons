@@ -145,7 +145,31 @@ const getSomePrices = (product) => {
 }
 
 
+export const cartReducer = (state, action) => {
+    switch(action.type){
+        case 'CHANGE_NAME':
+            const addName = {
+                ...state,
+                userName:action.payload.name
+            }
+            return addName;
+            
+        case 'CHANGE_ADDRESS':
+            const changeAddress = {
+                ...state,
+                userAddress:action.payload.address
+            }
+            return changeAddress;
+        
 
+        case 'ADD_PRODUCT' : 
+            const addProduct = {
+                ...state,
+                products:action.payload.product.push
+            }
+            return addProduct;
+    }
+}
 
 
 //2. создать функцию которая принимает масив продуктов и возвращает общую цену с доставной, (+10 за каждьій товар)

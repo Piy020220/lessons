@@ -13,6 +13,27 @@ export const StoreProductList = ({userCountry}) => {
   const mas = [15, 'hello', 'trump', 23, 'world', 999, 176];
   const mas1 = [2, 3, 4, 5, 6, 4, 77, 32, 4];
   
+  const days = {
+ "d1" : "Понедельник",
+ "d2" : "Вторник",
+ "d3" : "Среда",
+ "d4" : "Четверг"
+ }
+
+const renderDays = () => {
+ //===========
+  const mapFun = (item) => {
+  console.log('dausssssss',item)  
+  return (
+  <div>
+  {item[0]}-{item[1]}
+  </div> 
+  )}
+  //==========
+  return (Object.entries(days).map(mapFun) )
+}
+      
+ 
   const map2 = mas1.map((elw,im) => {
     if(elw < 5){
       return (null)
@@ -87,7 +108,10 @@ export const StoreProductList = ({userCountry}) => {
             <div>Selected country: {user.country}</div>
             {renderProducts()}
             {mas.map((el,i) => <div>{i}---{el}</div>)}
-
+            <br></br>
+            
+            {renderDays()}<br/>
+            
             <br></br>
             {mas1.filter((el) => el > 5).map((el,i) => <div>{i}---{el}</div>)}
           </div> 
@@ -95,9 +119,3 @@ export const StoreProductList = ({userCountry}) => {
     )
 }
       
-  
-  /*
-  1.PRODUCtS_API_ENDPOINT - поломать эту переменную ,задача:сообщить пользователю,
-   о том ,что что-то наебнулось текстом "что-то наебнулось",с помощью создания  UseState 
-  2.поймать ошибку с помощью catch
-  */

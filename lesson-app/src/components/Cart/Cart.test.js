@@ -64,7 +64,7 @@ describe('cartReducer', () => {
         }
         const newCart = cartReducer(testCart, action)
         
-        expect(newCart).toBe({
+        expect(newCart).toEqual({
             userName: 'Vladik yopta',
             userAddress: '',
             products: []
@@ -81,7 +81,7 @@ describe('cartReducer', () => {
         }
         const newCart = cartReducer(testCart, action)
         
-        expect(newCart).toBe({
+        expect(newCart).toEqual({
             userName: '',
             userAddress: 'Damrota 1',
             products: []
@@ -98,7 +98,7 @@ describe('cartReducer', () => {
         }
         const newCart = cartReducer(testCart, action)
         
-        expect(newCart).toBe({
+        expect(newCart).toEqual({
             userName: '',
             userAddress: '',
             products: [{id: 12, name: 'IPODS PRO MAX'}]
@@ -121,7 +121,7 @@ describe('cartReducer', () => {
         }
         const newCart = cartReducer(startCart, action)
         
-        expect(newCart).toBe({
+        expect(newCart).toEqual({
             userName: 'Petro',
             userAddress: '',
             products: [{id: 1, name: 'Samsung'}]
